@@ -19,8 +19,8 @@ class TheTable {
 	int CardPositionInDeck = 0;
 	int NameCardPosition = 0;
 	CardDeck deck = new CardDeck();
-	String[] suites = { "Clubs", "Diamonds", "Hearts", "Spades" };
-
+        // should suites be in the CardDeck be in the CardDeck class (AAR)
+	
 	public void DisplayTheDeck() {
 		try {
 			FileWriter writer = new FileWriter("c:\\data\\cards-"+(new Date()).getSeconds(), true);
@@ -62,6 +62,7 @@ class TheTable {
 }
 
 class CardDeck {
+        String[] suites = { "Clubs", "Diamonds", "Hearts", "Spades" };
 	public ArrayList<Card> _cardDeck = new ArrayList();
 }
 
@@ -75,7 +76,8 @@ class Card {
 	}
 
 	private String suite;
-	private String cardvalue;
+        private int suitevalue; 
+	private int cardvalue;
 	// #TODO: Add to the this Class a VALUE Data Attribute 
 	// set the VALUE of this Card based on Suite and Card Value
 	
@@ -86,8 +88,12 @@ class Card {
 
 class Player{
 	 
+        public void CalculateHandValue(){}
+        
 	String PlayerName;
+        // Hand playersHand;
+                
+        // suggestion: would it make sense for a Player to manage their own Hand
 	
 	
 }
-
